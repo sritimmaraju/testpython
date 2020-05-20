@@ -1,4 +1,4 @@
-FROM python:3.7.7-alpine3.11
+FROM python:3.8
 LABEL name="Sri Timmaraju"
 
 ENV PATH="/tools:${PATH}" \
