@@ -15,14 +15,14 @@ ENV PATH="/tools:${PATH}" \
     SPRUCE_VERSION="1.22.0"
 
 RUN pip install --upgrade pip && \
-    apk update && apk add curl && \
-    apk add git && \
+    apt-get update && apt-get add curl && \
+    apt-get add git && \
     pip install gitdb2 && \
     pip install cloudfoundry-client && \
     pip install gitpython && \
     pip install pytest && \
     pip install requests && \
-    apk add --no-cache $PACKAGES && \
+    apt-get add --no-cache $PACKAGES && \
     curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CF_CLI_VERSION}" | tar -zx -C /usr/local/bin && \
     curl -L -o "${CF_BGD_TEMPFILE}" \
     "https://github.com/bluemixgaragelondon/cf-blue-green-deploy/releases/download/v${CF_BGD_VERSION}/blue-green-deploy.linux64" && \
