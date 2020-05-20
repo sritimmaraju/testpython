@@ -16,7 +16,7 @@ ENV PATH="/tools:${PATH}" \
 
 RUN pip install --upgrade pip && \
     apt-get update && \
-    apt-get install --no-cache $PACKAGES && \
+    apt-get install $PACKAGES && \
     pip install gitdb2 && \
     pip install cloudfoundry-client && \
     pip install gitpython && \
